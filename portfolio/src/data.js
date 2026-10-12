@@ -3,8 +3,8 @@ export const me = {
   name: 'Nandha Kumar',
   roles: ['Full Stack Developer', 'React Developer', 'UI/UX Enthusiast'],
   intro: "I build seamless digital experiences that combine functionality with aesthetic appeal. Computer Science graduate, React-first, comfortable across the whole stack.",
-  photo: '/assets/Nandhakumar.T.jpeg',
-  cv: '/assets/Nandhakumar_MERN.pdf',
+  photo: './assets/Nandhakumar.T.jpeg',
+  cv: './assets/Nandhakumar_MERN.pdf',
   email: 'nandhakumar.tirupathi@gmail.com',
   phone: '+91 80728 59310',
   socials: [
