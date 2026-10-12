@@ -179,7 +179,7 @@ function Experience() {
         <div className="tl">
           {exp.map((e, i) => (
             <motion.article key={e.role + e.org} className="tl-item"
-              initial={{ opacity: 0, x: i % 2 ? 50 : -50 }} whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 28 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ duration: 0.6 }}>
               <span className="dot" />
               <div className="card">
@@ -260,7 +260,7 @@ function Skills() {
         <div className="mystack">
           {skillStack.map((group, gi) => (
             <motion.div key={group.cat} className="stack-row"
-              initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }} transition={{ delay: gi * 0.08, duration: 0.5 }}>
               <div className="stack-cat">{group.cat}</div>
               <div className="stack-items">
@@ -370,7 +370,7 @@ function Contact() {
             {contactCards.map((card, i) => (
               <motion.a key={card.label} href={card.href} onClick={card.onClick} className="c-card"
                 target={card.onClick ? undefined : '_blank'} rel="noreferrer"
-                initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{ '--brand': card.color }}>
                 <div className="c-icon" style={{ background: card.color }}>{card.icon}</div>
@@ -382,7 +382,7 @@ function Contact() {
             ))}
           </div>
           <motion.form ref={formRef} className="card form" onSubmit={submit}
-            initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
+            initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
             <input required placeholder="Your name" value={v.name} onChange={on('name')} />
             <input required type="email" placeholder="Your email" value={v.email} onChange={on('email')} />
             <input required placeholder="Subject" value={v.subject} onChange={on('subject')} />
