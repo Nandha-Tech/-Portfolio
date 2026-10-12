@@ -44,15 +44,16 @@ img{max-width:100%;display:block}
 .tags span{font-size:12.5px;padding:3px 12px;border-radius:999px;background:rgba(94,234,212,.1);color:var(--b)}
 
 /* ─── NAVBAR ─────────────────────────────────────────────── */
-.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:90px;padding:14px 28px;transition:.3s}
+.nav{position:fixed;top:0;left:0;right:0;z-index:50;display:flex;align-items:center;justify-content:space-between;gap:20px;padding:14px 28px;transition:.3s;max-width:100vw;box-sizing:border-box}
 .nav.sc{background:var(--nav-glass);backdrop-filter:blur(14px);border-bottom:1px solid var(--line);padding:10px 28px}
 .bar{position:absolute;left:0;bottom:-1px;height:2px;width:100%;background:linear-gradient(90deg,var(--a),var(--b));transform-origin:0}
-.logo{font-size:22px;font-weight:800;flex-shrink:0;margin-right:auto}.logo b{color:var(--a)}
+.logo{font-size:22px;font-weight:800;flex-shrink:0}.logo b{color:var(--a)}
 .nav nav{display:flex;gap:6px}
 .nav nav a{padding:6px 14px;border-radius:999px;color:var(--mu);font-size:15px;transition:.2s}
 .nav nav a:hover{color:var(--tx)}.nav nav a.on{background:var(--card);color:var(--a);border:1px solid var(--line)}
 
-/* Navbar icon group */
+/* Navbar actions & icons */
+.nav-actions{display:flex;align-items:center;gap:10px;flex-shrink:0}
 .nav-icons{display:flex;align-items:center;gap:4px;flex-shrink:0}
 .nav-icon-btn{display:flex;align-items:center;justify-content:center;width:38px;height:38px;border-radius:50%;background:transparent;border:1px solid var(--line);color:var(--mu);cursor:pointer;transition:.2s;font-size:inherit;font-family:inherit;text-decoration:none;flex-shrink:0}
 .nav-icon-btn:hover{background:var(--card);color:var(--tx);border-color:var(--a);transform:translateY(-2px)}
@@ -63,7 +64,7 @@ img{max-width:100%;display:block}
 .bot-btn:hover{border-color:var(--a);color:var(--a);box-shadow:0 4px 16px -4px var(--a)}
 .theme-btn{color:var(--a)}
 
-.burger{display:none;background:none;border:0;color:var(--tx);font-size:24px;cursor:pointer;margin-left:4px}
+.burger{display:none;background:none;border:0;color:var(--tx);font-size:24px;cursor:pointer;flex-shrink:0;align-items:center;justify-content:center;line-height:1;padding:0}
 
 /* ─── HERO ─────────────────────────────────────────────── */
 .hero{min-height:100vh;padding-top:110px;display:flex;flex-direction:column;justify-content:space-between;background:radial-gradient(circle at 80% 20%,rgba(167,139,250,.22),transparent 45%),radial-gradient(circle at 10% 80%,rgba(255,180,84,.12),transparent 40%)}
@@ -229,25 +230,37 @@ footer{border-top:1px solid var(--line);padding:26px 0;text-align:center;color:v
   .p-grid,.v-grid,.edu{grid-template-columns:1fr 1fr}
   .stack-row{grid-template-columns:1fr;gap:16px}
   .stack-cat{font-size:22px}
-  .burger{display:block}.btn.sm{display:none}
+  .burger{display:flex}
+  .btn.sm{display:none}
   .nav{gap:10px;padding:12px 18px}
+  .nav-actions{gap:8px}
   .nav-icons{gap:4px}
   .nav-icon-btn{width:34px;height:34px}
   .nav nav{position:absolute;top:100%;left:0;right:0;flex-direction:column;background:var(--bg2);padding:12px 22px;border-bottom:1px solid var(--line);display:none}
   .nav nav.open{display:flex}
 }
 @media(max-width:600px){
-  .nav{padding:10px 14px;gap:6px}
-  .logo{font-size:19px}
-  .nav-icons{gap:3px}
-  .nav-icon-btn{width:30px;height:30px}
-  .nav-icon-btn svg{width:15px;height:15px}
-  .burger{font-size:20px;padding:2px;margin-left:2px}
+  .nav{padding:10px 12px;gap:6px}
+  .logo{font-size:18px;min-width:0;flex-shrink:0}
+  .nav-actions{gap:4px;flex-shrink:0}
+  .nav-icons{gap:2.5px;flex-shrink:0}
+  .nav-icon-btn{width:28px;height:28px}
+  .nav-icon-btn svg{width:14px;height:14px}
+  .burger{display:flex;width:28px;height:28px;font-size:18px;line-height:1;margin:0;padding:0;flex-shrink:0}
   .p-grid,.v-grid,.edu{grid-template-columns:1fr}.sec{padding:70px 0}.stats{gap:20px}
   .stack-items{gap:8px 12px}
   .stack-item{padding:8px 14px}
   .stack-icon{width:22px;height:22px}
   .fab{right:16px;bottom:16px;width:52px;height:52px}
   .chat{right:10px;bottom:78px;width:calc(100vw - 20px);height:min(500px,calc(100vh - 90px))}
+}
+@media(max-width:370px){
+  .nav{padding:8px 8px;gap:4px}
+  .logo{font-size:16px}
+  .nav-actions{gap:3px}
+  .nav-icons{gap:1.5px}
+  .nav-icon-btn{width:25px;height:25px}
+  .nav-icon-btn svg{width:12px;height:12px}
+  .burger{width:26px;height:26px;font-size:16px}
 }
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}

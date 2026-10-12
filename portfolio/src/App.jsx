@@ -109,17 +109,19 @@ function Navbar({ theme, setTheme, onChat }) {
           <a key={n.id} href={'#' + n.id} onClick={() => setOpen(false)} className={act === n.id ? 'on' : ''}>{n.l}</a>
         ))}
       </nav>
-      <div className="nav-icons">
-        <a href={me.socials[0].u} target="_blank" rel="noreferrer" className="nav-icon-btn gh-btn" title="GitHub"><GithubIcon /></a>
-        <a href={me.socials[1].u} target="_blank" rel="noreferrer" className="nav-icon-btn li-btn" title="LinkedIn"><LinkedinIcon /></a>
-        <a href={`mailto:${me.email}`} onClick={openEmail} className="nav-icon-btn mail-btn" title="Send Email"><MailIcon /></a>
-        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="nav-icon-btn wa-btn" title="Chat on WhatsApp"><WhatsAppIcon /></a>
-        <button className="nav-icon-btn theme-btn" title="Toggle theme" onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}>
-          {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
-        </button>
+      <div className="nav-actions">
+        <div className="nav-icons">
+          <a href={me.socials[0].u} target="_blank" rel="noreferrer" className="nav-icon-btn gh-btn" title="GitHub"><GithubIcon /></a>
+          <a href={me.socials[1].u} target="_blank" rel="noreferrer" className="nav-icon-btn li-btn" title="LinkedIn"><LinkedinIcon /></a>
+          <a href={`mailto:${me.email}`} onClick={openEmail} className="nav-icon-btn mail-btn" title="Send Email"><MailIcon /></a>
+          <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="nav-icon-btn wa-btn" title="Chat on WhatsApp"><WhatsAppIcon /></a>
+          <button className="nav-icon-btn theme-btn" title="Toggle theme" onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}>
+            {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
+          </button>
+        </div>
+        <a className="btn sm" href={me.cv} target="_blank" rel="noreferrer">Download CV</a>
+        <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
       </div>
-      <a className="btn sm" href={me.cv} target="_blank" rel="noreferrer">Download CV</a>
-      <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
     </header>
   );
 }
