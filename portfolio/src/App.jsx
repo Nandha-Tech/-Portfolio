@@ -108,40 +108,18 @@ function Navbar({ theme, setTheme, onChat }) {
         {NAV.map((n) => (
           <a key={n.id} href={'#' + n.id} onClick={() => setOpen(false)} className={act === n.id ? 'on' : ''}>{n.l}</a>
         ))}
-        <div className="mobile-menu-footer">
-          <a className="btn sm mobile-cv-btn" href={me.cv} target="_blank" rel="noreferrer" onClick={() => setOpen(false)}>Download CV</a>
-          <div className="mobile-socials">
-            <a href={me.socials[0].u} target="_blank" rel="noreferrer" className="nav-icon-btn gh-btn" title="GitHub"><GithubIcon /></a>
-            <a href={me.socials[1].u} target="_blank" rel="noreferrer" className="nav-icon-btn li-btn" title="LinkedIn"><LinkedinIcon /></a>
-            <a href={`mailto:${me.email}`} onClick={openEmail} className="nav-icon-btn mail-btn" title="Send Email"><MailIcon /></a>
-            <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="nav-icon-btn wa-btn" title="Chat on WhatsApp"><WhatsAppIcon /></a>
-          </div>
-        </div>
       </nav>
       <div className="nav-icons">
-        <a href={me.socials[0].u} target="_blank" rel="noreferrer" className="nav-icon-btn gh-btn social-btn" title="GitHub"><GithubIcon /></a>
-        <a href={me.socials[1].u} target="_blank" rel="noreferrer" className="nav-icon-btn li-btn social-btn" title="LinkedIn"><LinkedinIcon /></a>
-        <a href={`mailto:${me.email}`} onClick={openEmail} className="nav-icon-btn mail-btn social-btn" title="Send Email"><MailIcon /></a>
-        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="nav-icon-btn wa-btn social-btn" title="Chat on WhatsApp"><WhatsAppIcon /></a>
+        <a href={me.socials[0].u} target="_blank" rel="noreferrer" className="nav-icon-btn gh-btn" title="GitHub"><GithubIcon /></a>
+        <a href={me.socials[1].u} target="_blank" rel="noreferrer" className="nav-icon-btn li-btn" title="LinkedIn"><LinkedinIcon /></a>
+        <a href={`mailto:${me.email}`} onClick={openEmail} className="nav-icon-btn mail-btn" title="Send Email"><MailIcon /></a>
+        <a href={WHATSAPP_URL} target="_blank" rel="noreferrer" className="nav-icon-btn wa-btn" title="Chat on WhatsApp"><WhatsAppIcon /></a>
         <button className="nav-icon-btn theme-btn" title="Toggle theme" onClick={() => setTheme(t => t === 'dark' ? 'light' : 'dark')}>
           {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
         </button>
       </div>
       <a className="btn sm" href={me.cv} target="_blank" rel="noreferrer">Download CV</a>
-      <button className={`burger ${open ? 'open' : ''}`} aria-label={open ? 'Close menu' : 'Open menu'} onClick={() => setOpen(!open)}>
-        {open ? (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="18" y1="6" x2="6" y2="18"></line>
-            <line x1="6" y1="6" x2="18" y2="18"></line>
-          </svg>
-        ) : (
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
-            <line x1="3" y1="6" x2="21" y2="6"></line>
-            <line x1="3" y1="12" x2="21" y2="12"></line>
-            <line x1="3" y1="18" x2="21" y2="18"></line>
-          </svg>
-        )}
-      </button>
+      <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
     </header>
   );
 }
