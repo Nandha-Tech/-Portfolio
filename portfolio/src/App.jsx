@@ -119,7 +119,7 @@ function Navbar({ theme, setTheme, onChat }) {
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
         </div>
-        <a className="btn sm" href={me.cv} target="_blank" rel="noreferrer">Download CV</a>
+        <a className="btn sm" href={me.cv} download="Nandha_Kumar_MERN_Stack_Developer_Resume.pdf" target="_blank" rel="noreferrer">Download Resume</a>
         <button className="burger" aria-label="Menu" onClick={() => setOpen(!open)}>{open ? '✕' : '☰'}</button>
       </div>
     </header>
@@ -210,6 +210,7 @@ function Experience() {
 
 /* ─── Projects ───────────────────────────────────────────── */
 function Projects() {
+  const PAGE_SIZE = 9;
   // Initialize filter from URL param on first render
   const getInitialFilter = () => {
     const param = new URLSearchParams(window.location.search).get('filter');
@@ -217,10 +218,12 @@ function Projects() {
     return validKeys.includes(param) ? param : 'all';
   };
   const [f, setF] = useState(getInitialFilter);
+  const [visibleCount, setVisibleCount] = useState(PAGE_SIZE);
 
   // Sync URL param whenever filter changes
   const handleFilter = (key) => {
     setF(key);
+    setVisibleCount(PAGE_SIZE);
     const url = new URL(window.location.href);
     if (key === 'all') {
       url.searchParams.delete('filter');
@@ -236,12 +239,16 @@ function Projects() {
       const param = new URLSearchParams(window.location.search).get('filter');
       const validKeys = filters.map(([k]) => k);
       setF(validKeys.includes(param) ? param : 'all');
+      setVisibleCount(PAGE_SIZE);
     };
     window.addEventListener('popstate', onPop);
     return () => window.removeEventListener('popstate', onPop);
   }, []);
 
   const list = projects.filter((p) => f === 'all' || p.c === f);
+  const visibleList = list.slice(0, visibleCount);
+  const hasMore = visibleCount < list.length;
+
   return (
     <section id="projects" className="sec alt">
       <div className="wrap">
@@ -253,7 +260,7 @@ function Projects() {
         </div>
         <motion.div layout className="grid p-grid">
           <AnimatePresence mode="popLayout">
-            {list.map((p) => (
+            {visibleList.map((p) => (
               <motion.article layout key={p.t} className="proj"
                 initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.9 }} transition={{ duration: 0.35 }}>
@@ -273,6 +280,24 @@ function Projects() {
             ))}
           </AnimatePresence>
         </motion.div>
+        {hasMore && (
+          <motion.div
+            className="show-more-wrap"
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.3 }}
+          >
+            <button
+              className="btn ghost show-more-btn"
+              onClick={() => setVisibleCount((prev) => prev + PAGE_SIZE)}
+            >
+              <span>Show More</span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="6 9 12 15 18 9" />
+              </svg>
+            </button>
+          </motion.div>
+        )}
       </div>
     </section>
   );
@@ -525,7 +550,7 @@ function smartFallbackAnswer(q) {
   if (KB.social.some(w => q.includes(w)))
     return `🔗 Social Links:\n\n• GitHub: github.com/nandha-tech\n• LinkedIn: linkedin.com/in/nandhakumaroffl\n• Instagram: instagram.com/nandhakumaroffl`;
   if (KB.cv.some(w => q.includes(w)))
-    return `📄 Click the "Download CV" button in the top navbar to download Nandha's resume!`;
+    return `📄 Click the "Download Resume" button in the top navbar to download Nandha's resume!`;
 
   return `🤖 I'm here to help with information about Nandha Kumar's skills, projects, experience, education, or contact details. Feel free to ask any specific question!`;
 }
