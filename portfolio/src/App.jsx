@@ -210,7 +210,37 @@ function Experience() {
 
 /* ─── Projects ───────────────────────────────────────────── */
 function Projects() {
-  const [f, setF] = useState('all');
+  // Initialize filter from URL param on first render
+  const getInitialFilter = () => {
+    const param = new URLSearchParams(window.location.search).get('filter');
+    const validKeys = filters.map(([k]) => k);
+    return validKeys.includes(param) ? param : 'all';
+  };
+  const [f, setF] = useState(getInitialFilter);
+
+  // Sync URL param whenever filter changes
+  const handleFilter = (key) => {
+    setF(key);
+    const url = new URL(window.location.href);
+    if (key === 'all') {
+      url.searchParams.delete('filter');
+    } else {
+      url.searchParams.set('filter', key);
+    }
+    window.history.pushState({}, '', url.toString());
+  };
+
+  // Also listen for browser back/forward navigation
+  useEffect(() => {
+    const onPop = () => {
+      const param = new URLSearchParams(window.location.search).get('filter');
+      const validKeys = filters.map(([k]) => k);
+      setF(validKeys.includes(param) ? param : 'all');
+    };
+    window.addEventListener('popstate', onPop);
+    return () => window.removeEventListener('popstate', onPop);
+  }, []);
+
   const list = projects.filter((p) => f === 'all' || p.c === f);
   return (
     <section id="projects" className="sec alt">
@@ -218,7 +248,7 @@ function Projects() {
         <Head t="Projects" s="Things I've built and shipped" />
         <div className="tabs">
           {filters.map(([k, l]) => (
-            <button key={k} className={f === k ? 'on' : ''} onClick={() => setF(k)}>{l}</button>
+            <button key={k} className={f === k ? 'on' : ''} onClick={() => handleFilter(k)}>{l}</button>
           ))}
         </div>
         <motion.div layout className="grid p-grid">

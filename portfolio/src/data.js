@@ -45,66 +45,83 @@ export const edu = [
   ['National Matric Hr Sec School', '12th, Computer Science', '2021 · 76%'],
   ['National Matric Hr Sec School', '10th', '2019 · 70%'],
 ];
-// GitHub OG image helper – served by GitHub CDN, fast & descriptive
-const gh = (owner, repo) => `https://opengraph.githubassets.com/1/${owner}/${repo}`;
-
 export const projects = [
   // ── Catalogue websites ──
-  { t: 'Restaurant Website', c: 'catalogue',
-    img: gh('Nandha-Tech', 'Restaurant-Website'),
+  {
+    t: 'Restaurant Website', c: 'catalogue',
+    img: 'https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=800&q=60&auto=format&fit=crop',
     d: 'Elegant restaurant site with menu showcase, reservations and a vibrant UI — deployed on Cloudflare Workers.',
-    tags: ['JavaScript', 'CSS', 'HTML', 'Cloudflare Workers'],
-    live: 'https://restaurant-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Restaurant-Website' },
-  { t: 'Real Estate Website', c: 'catalogue',
-    img: gh('Nandha-Tech', 'realestate'),
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    live: 'https://restaurant-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Restaurant-Website',
+  },
+  {
+    t: 'Real Estate Website', c: 'catalogue',
+    img: 'https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=60&auto=format&fit=crop',
     d: 'Property listing site with search filters, property details and inquiry forms — deployed on Cloudflare Workers.',
-    tags: ['JavaScript', 'CSS', 'HTML', 'Cloudflare Workers'],
-    live: 'https://realestate.nandhakumar77c.workers.dev/', src: 'https://github.com/Nandha-Tech/realestate' },
-  { t: 'Clinic Website', c: 'catalogue',
-    img: gh('Nandha-Tech', 'Clinic-webiste'),
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    live: 'https://realestate.nandhakumar77c.workers.dev/', src: 'https://github.com/Nandha-Tech/realestate',
+  },
+  {
+    t: 'Clinic Website', c: 'catalogue',
+    img: 'https://images.unsplash.com/photo-1586773860418-d37222d8fce3?w=800&q=60&auto=format&fit=crop',
     d: 'Medical clinic landing page with services, doctor profiles and appointment booking UI.',
-    tags: ['JavaScript', 'CSS', 'HTML', 'Cloudflare Workers'],
-    live: 'https://clinic-webiste.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Clinic-webiste' },
-  { t: 'Craftfolio', c: 'catalogue',
-    img: gh('Nandha-Tech', 'Craftfolio-website'),
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    live: 'https://clinic-webiste.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Clinic-webiste',
+  },
+  {
+    t: 'Craftfolio', c: 'catalogue',
+    img: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?w=800&q=60&auto=format&fit=crop',
     d: 'Creative portfolio / agency website showcasing design and development work with smooth animations.',
-    tags: ['JavaScript', 'CSS', 'HTML', 'Cloudflare Workers'],
-    live: 'https://craftfolio-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Craftfolio-website' },
-  { t: 'Gym & Fitness Website', c: 'catalogue',
-    img: gh('Nandha-Tech', 'gym-fitness-website'),
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    live: 'https://craftfolio-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Craftfolio-website',
+  },
+  {
+    t: 'Gym & Fitness Website', c: 'catalogue',
+    img: 'https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&q=60&auto=format&fit=crop',
     d: 'Fitness centre landing page with class schedules, trainer bios, pricing and a bold high-energy design.',
-    tags: ['JavaScript', 'CSS', 'HTML', 'Cloudflare Workers'],
-    live: 'https://gym-fitness-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/gym-fitness-website' },
+    tags: ['JavaScript', 'CSS', 'HTML'],
+    live: 'https://gym-fitness-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/gym-fitness-website',
+  },
   // ── React / Frontend projects ──
-  { t: 'Email Customizer', c: 'react',
-    img: gh('Nandha-Tech', 'Email-Customizer-'),
+  {
+    t: 'Email Customizer', c: 'react',
+    img: 'https://images.unsplash.com/photo-1596526131083-e8c633964948?w=800&q=60&auto=format&fit=crop',
     d: 'Drag & drop email template builder with live preview and export to HTML or MJML.',
     tags: ['React', 'JavaScript', 'Tailwind CSS', 'MJML'],
-    live: 'https://email-customizer-9m8u.vercel.app/', src: 'https://github.com/Nandha-Tech/Email-Customizer-.git' },
-  { t: 'Human Card', c: 'react',
-    img: gh('Nandha-Tech', 'Human-Card'),
+    live: 'https://email-customizer-9m8u.vercel.app/', src: 'https://github.com/Nandha-Tech/Email-Customizer-.git',
+  },
+  {
+    t: 'Human Card', c: 'react',
+    img: 'https://images.unsplash.com/photo-1572021335469-31706a17aaef?w=800&q=60&auto=format&fit=crop',
     d: 'Digital identity card: store, preview and share personal data with themes, PDF export and cloud sync.',
     tags: ['React', 'JavaScript', 'Material UI', 'FastAPI'],
-    live: 'https://human-card-1.onrender.com/', src: 'https://github.com/Nandha-Tech/Human-Card' },
-  { t: 'Resume Builder', c: 'react',
-    img: gh('Nandha-Tech', 'Resume-Builder'),
+    live: 'https://human-card-1.onrender.com/', src: 'https://github.com/Nandha-Tech/Human-Card',
+  },
+  {
+    t: 'Resume Builder', c: 'react',
+    img: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?w=800&q=60&auto=format&fit=crop',
     d: 'Create professional resumes from templates and export them as PDF.',
     tags: ['TypeScript', 'React', 'HTML', 'CSS'],
-    live: 'https://resume-builder-584w.vercel.app/', src: 'https://github.com/Nandha-Tech/Resume-Builder' },
-  { t: 'Portfolio Website', c: 'react',
-    img: gh('Nandha-Tech', '-Portfolio'),
+    live: 'https://resume-builder-584w.vercel.app/', src: 'https://github.com/Nandha-Tech/Resume-Builder',
+  },
+  {
+    t: 'Portfolio Website', c: 'react',
+    img: 'https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&q=60&auto=format&fit=crop',
     d: 'This portfolio — responsive, animated, with AI chatbot and dark/light mode.',
     tags: ['JavaScript', 'CSS', 'React', 'Vite'],
-    live: 'https://nandha-tech.github.io/-Portfolio/', src: 'https://github.com/Nandha-Tech/-Portfolio' },
+    live: 'https://nandha-tech.github.io/-Portfolio/', src: 'https://github.com/Nandha-Tech/-Portfolio',
+  },
   // ── Full Stack projects ──
-  { t: 'E-Commerce Website', c: 'full',
-    img: gh('Nandha-Tech', 'Shop-sea'),
+  {
+    t: 'E-Commerce Website', c: 'full',
+    img: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=60&auto=format&fit=crop',
     d: 'Product listings, cart, authentication and payment integration.',
     tags: ['JavaScript', 'CSS', 'React', 'Node.js'],
-    live: 'https://shop-sea-gold.vercel.app/', src: 'https://github.com/Nandha-Tech/Shop-sea' },
+    live: 'https://shop-sea-gold.vercel.app/', src: 'https://github.com/Nandha-Tech/Shop-sea',
+  },
 ];
-export const filters = [['all', 'All'], ['catalogue', 'Catalogue'], ['react', 'Frontend'], ['full', 'Full Stack']];
 
+export const filters = [['all', 'All'], ['catalogue', 'Catalogue'], ['react', 'Frontend'], ['full', 'Full Stack']];
 
 const dv = (n, f) => `https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${n}/${f || n + '-original'}.svg`;
 export const stack = [['html5'], ['css3'], ['javascript'], ['react'], ['typescript'], ['vuejs'], ['redux'], ['tailwindcss'], ['materialui'], ['nodejs'], ['express', 'express-original'], ['mongodb'], ['python'], ['figma']].map(([n, f]) => [n, dv(n, f)]);
