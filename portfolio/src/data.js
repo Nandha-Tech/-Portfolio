@@ -49,7 +49,7 @@ export const projects = [
   // ── Catalogue websites ──
   {
     t: 'Restaurant Website', c: 'catalogue',
-    img: 'https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=75&auto=format&fit=crop',
+    img: './assets/projects/restaurant.jpg',
     d: 'Elegant restaurant site with menu showcase, reservations and a vibrant UI — deployed on Cloudflare Workers.',
     tags: ['React', 'JavaScript', 'CSS', 'HTML'],
     live: 'https://restaurant-website.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Restaurant-Website',
@@ -63,7 +63,7 @@ export const projects = [
   },
   {
     t: 'Clinic Website', c: 'catalogue',
-    img: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=900&q=75&auto=format&fit=crop',
+    img: './assets/projects/clinic.jpg',
     d: 'Medical clinic landing page with services, doctor profiles and appointment booking UI.',
     tags: ['React', 'JavaScript', 'CSS', 'HTML'],
     live: 'https://clinic-webiste.nandhakumar77c.workers.dev', src: 'https://github.com/Nandha-Tech/Clinic-webiste',
@@ -119,34 +119,7 @@ export const projects = [
     tags: ['JavaScript', 'CSS', 'React', 'Node.js'],
     live: 'https://shop-sea-gold.vercel.app/', src: 'https://github.com/Nandha-Tech/Shop-sea',
   },
-  {
-    t: 'MERN Food Order App', c: 'full',
-    img: 'https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=900&q=75&auto=format&fit=crop',
-    d: 'Auth, menu management, cart, order history, admin panel and real-time order status via WebSockets.',
-    tags: ['MongoDB', 'Express', 'React', 'Node.js'],
-    live: 'https://github.com/Nandha-Tech', src: 'https://github.com/Nandha-Tech',
-  },
-  {
-    t: 'Student Management System', c: 'full',
-    img: 'https://images.unsplash.com/photo-1523240795612-9a054b0db644?w=900&q=75&auto=format&fit=crop',
-    d: 'Student records with full CRUD, built on a REST API with Axios.',
-    tags: ['React', 'REST API', 'Axios', 'Material UI'],
-    live: 'https://student-mangement-system-crud.vercel.app/', src: 'https://github.com/Nandha-Tech/Student-Mangement-System-CRUD',
-  },
-  {
-    t: 'Chatbot AI', c: 'full',
-    img: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=900&q=75&auto=format&fit=crop',
-    d: 'Context-aware conversational assistant with multi-turn chat and file upload for knowledge ingestion.',
-    tags: ['React', 'FastAPI', 'OpenAI', 'Material UI'],
-    live: 'https://github.com/Nandha-Tech', src: 'https://github.com/Nandha-Tech',
-  },
-  {
-    t: 'AI Career Finder', c: 'full',
-    img: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=900&q=75&auto=format&fit=crop',
-    d: 'Analyzes skills and interests to recommend personalized career paths.',
-    tags: ['React', 'Flask', 'ML', 'OpenAI API'],
-    live: 'https://ai-career-path-finder-f0tz8b0y9-nandhakumars-projects-9d088f9f.vercel.app/', src: 'https://github.com/Nandha-Tech/Ai-career-path-finder',
-  },
+
 ];
 
 export const filters = [['all', 'All'], ['catalogue', 'Catalogue'], ['react', 'Frontend'], ['full', 'Full Stack']];
